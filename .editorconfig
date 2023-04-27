@@ -13,7 +13,7 @@ indent_size = 2
 trim_trailing_whitespace = true
 insert_final_newline = false
 
-[{*.ts}]
+[{*.ts,.vscode/*.json}]
 indent_size = 4
 trim_trailing_whitespace = true
 insert_final_newline = true
