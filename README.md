@@ -1,5 +1,5 @@
 # crypchar
-Encryption and decryption of characters using arithmetic operations.
+Encryption and decryption of characters using arithmetic and bitwise operations.
 
 ## Installation
 ```bash
