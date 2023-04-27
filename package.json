@@ -1,7 +1,7 @@
 {
   "name": "crypchar",
   "version": "1.0.0",
-  "description": "Encryption and decryption of characters using arithmetic operations.",
+  "description": "Encryption and decryption of characters using arithmetic and bitwise operations.",
   "main": "cjs/index.js",
   "module": "esm/index.mjs",
   "types": "types/index.d.ts",
