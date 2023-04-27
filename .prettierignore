@@ -1,0 +1,9 @@
+**/**
+!**/*.js
+!**/*.ts
+.git
+.vscode
+cjs
+esm
+types
+node_modules

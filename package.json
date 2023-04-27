@@ -1,0 +1,68 @@
+{
+  "name": "crypchar",
+  "version": "1.0.0",
+  "description": "Encryption and decryption of characters using arithmetic operations.",
+  "main": "cjs/index.js",
+  "module": "esm/index.mjs",
+  "types": "types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "import": "./esm/index.mjs",
+      "require": "./cjs/index.js"
+    },
+    "./*": {
+      "types": "./types/*.d.ts",
+      "import": "./esm/*.mjs",
+      "require": "./cjs/*.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crack-a-bottle/crypchar.git"
+  },
+  "files": [
+    "cjs",
+    "esm",
+    "types"
+  ],
+  "scripts": {
+    "build": "tsup && tsc --emitDeclarationOnly --types node",
+    "build:docs": "typedoc src/index.ts --includeVersion",
+    "test": "mocha",
+    "lint": "prettier . -c",
+    "prepare": "pnpm build"
+  },
+  "homepage": "https://crackabottle.js.org/crypchar",
+  "keywords": [
+    "crypchar",
+    "crypto",
+    "characters",
+    "encryption",
+    "decryption",
+    "arithmetic",
+    "operations",
+    "and",
+    "xor",
+    "nor",
+    "nand",
+    "xnor",
+    "not",
+    "or",
+    "byte",
+    "bit",
+    "bitwise"
+  ],
+  "author": "hiimjustin000",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^18.16.0",
+    "mocha": "^10.2.0",
+    "prettier": "^2.8.8",
+    "ts-node": "^10.9.1",
+    "tsup": "^6.7.0",
+    "typedoc": "^0.24.6",
+    "typescript": "^5.0.4"
+  }
+}
