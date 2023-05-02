@@ -18,6 +18,12 @@ import * as crypchar from "crypchar";
 import { add, subtract, xor, not } from "crypchar";
 import xor from "crypchar/xor";
 ```
+```html
+<script src="https://cdn.jsdelivr.net/npm/crypchar/dist/crypchar.js"></script>
+```
+```html
+<script src="https://cdn.jsdelivr.net/npm/crypchar/dist/crypchar.min.js"></script>
+```
 
 ## Usage
 ```js

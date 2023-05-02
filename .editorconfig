@@ -23,7 +23,7 @@ indent_size = 4
 trim_trailing_whitespace = true
 insert_final_newline = true
 
-[{{cjs,esm,dist}/*.js,pnpm-lock.yaml}]
+[{{cjs,dist,esm}/*.js,pnpm-lock.yaml}]
 indent_size = 2
 trim_trailing_whitespace = false
 insert_final_newline = false

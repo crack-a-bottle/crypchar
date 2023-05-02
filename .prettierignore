@@ -4,7 +4,7 @@
 .git
 .vscode
 cjs
-esm
 dist
+esm
 types
 node_modules
