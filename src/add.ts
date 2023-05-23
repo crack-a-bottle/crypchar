@@ -1,22 +1,26 @@
 import { _internal } from ".";
 
-/** Adds the given key to each byte of the given data. */
+/** Adds the given key(s) to each byte of the given data. */
 function add(
     data: string | ArrayBuffer | NodeJS.ArrayBufferView,
-    key: number,
+    key: number | number[],
     encoding: string
 ): string;
 function add(
     data: string | ArrayBuffer | NodeJS.ArrayBufferView,
-    key: number
+    key: number | number[]
 ): Uint8Array;
 function add(
     data: string | ArrayBuffer | NodeJS.ArrayBufferView,
-    key: number,
+    key: number | number[],
     encoding?: string
 ): string | Uint8Array {
-    const k = !isNaN(key) ? Number(key) : 0;
-    const result = _internal.toBuffer(data).map(x => (x + k) & 255);
+    const k = Array.isArray(key)
+        ? key.map(x => (!isNaN(x) ? Number(x) : 0))
+        : [!isNaN(key) ? Number(key) : 0];
+    const result = _internal
+        .toBuffer(data)
+        .map((x, i) => (x + k[i % k.length]) & 255);
     return encoding
         ? typeof Buffer != "undefined" && Buffer.isBuffer(result)
             ? result.toString(encoding as BufferEncoding)

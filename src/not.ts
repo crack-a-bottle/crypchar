@@ -10,7 +10,7 @@ function not(
     data: string | ArrayBuffer | NodeJS.ArrayBufferView,
     encoding?: string
 ): string | Uint8Array {
-    const result = _internal.toBuffer(data).map(x => x ^ (255 & 255));
+    const result = _internal.toBuffer(data).map(x => (x ^ 255) & 255);
     return encoding
         ? typeof Buffer != "undefined" && Buffer.isBuffer(result)
             ? result.toString(encoding as BufferEncoding)

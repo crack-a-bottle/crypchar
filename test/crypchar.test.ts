@@ -42,4 +42,12 @@ describe("crypchar", () => {
             );
         });
     });
+    describe("multiply", () => {
+        it("should multiply each byte of the given data by the given keys", () => {
+            assert.strictEqual(
+                crypchar.multiply("Hello, world!", [1, 2], "latin1"),
+                "HÊlØoX îoälÈ!"
+            );
+        });
+    });
 });

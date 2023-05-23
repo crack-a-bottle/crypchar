@@ -21,7 +21,7 @@ export const _internal = {
             else if (data instanceof ArrayBuffer) return Buffer.from(data);
             else
                 throw new TypeError(
-                    'Argument "data" must be of type string or an instance of Buffer, TypedArray, DataView, or ArrayBuffer.'
+                    "Argument \u0022data\u0022 must be of type string or an instance of Buffer, TypedArray, DataView, or ArrayBuffer."
                 );
         } else {
             if (typeof data == "string") return new TextEncoder().encode(data);
@@ -30,7 +30,7 @@ export const _internal = {
             else if (data instanceof ArrayBuffer) return new Uint8Array(data);
             else
                 throw new TypeError(
-                    'Argument "data" must be of type string or an instance of TypedArray, DataView, or ArrayBuffer.'
+                    "Argument \u0022data\u0022 must be of type string or an instance of TypedArray, DataView, or ArrayBuffer."
                 );
         }
     }

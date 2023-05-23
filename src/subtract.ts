@@ -1,22 +1,26 @@
 import { _internal } from ".";
 
-/** Subtracts the given key from each byte of the given data. */
+/** Subtracts the given key(s) from each byte of the given data. */
 function subtract(
     data: string | ArrayBuffer | NodeJS.ArrayBufferView,
-    key: number,
+    key: number | number[],
     encoding: string
 ): string;
 function subtract(
     data: string | ArrayBuffer | NodeJS.ArrayBufferView,
-    key: number
+    key: number | number[]
 ): Uint8Array;
 function subtract(
     data: string | ArrayBuffer | NodeJS.ArrayBufferView,
-    key: number,
+    key: number | number[],
     encoding?: string
 ): string | Uint8Array {
-    const k = !isNaN(key) ? Number(key) : 0;
-    const result = _internal.toBuffer(data).map(x => (x - k) & 255);
+    const k = Array.isArray(key)
+        ? key.map(x => (!isNaN(x) ? Number(x) : 0))
+        : [!isNaN(key) ? Number(key) : 0];
+    const result = _internal
+        .toBuffer(data)
+        .map((x, i) => (x - k[i % k.length]) & 255);
     return encoding
         ? typeof Buffer != "undefined" && Buffer.isBuffer(result)
             ? result.toString(encoding as BufferEncoding)
